@@ -13,22 +13,25 @@ func _ready() -> void:
 	box = panel.get_theme_stylebox("panel") as StyleBoxFlat
 
 func _physics_process(delta: float) -> void:
-	if PauseMenu.is_paused():
-		return
-
 	if not is_on_floor():
 		velocity += get_gravity() * delta * 0.7
 	elif Input.is_action_just_pressed("jump"):
-		velocity.y = JUMP_VELOCITY
-		rotate_panel()
-		box.border_blend = false
-		box.set_border_width_all([1, 2].pick_random())
-		box.set_corner_radius_all([1, 4, 8].pick_random())
-		box.corner_detail = [1, 16].pick_random()
-		box.border_color = [Color(1, 0, 0.8), Color(1, 0.8, 0), Color(0.8, 1, 0), Color(1, 1, 1)].pick_random()
+		jump()
 
 	move_and_slide()
 
-func rotate_panel() -> void:
+func jump() -> void:
+	velocity.y = JUMP_VELOCITY
+
+	box.border_blend = false
+	box.bg_color = random_color()
+	box.set_border_width_all([1].pick_random())
+	box.set_corner_radius_all([1, 8].pick_random())
+	box.corner_detail = [1].pick_random()
+	box.border_color = [Color(0, 0, 0), random_color(), Color(1, 1, 1)].pick_random()
+	
 	panel.rotation = 0
-	panel.create_tween().tween_property(panel, "rotation_degrees", 360, 1.1)
+	panel.create_tween().tween_property(panel, "rotation_degrees", 180, 1.1)
+
+func random_color() -> Color:
+	return Color(randf_range(0, 1), randf_range(0, 1), randf_range(0, 1), 1.0)

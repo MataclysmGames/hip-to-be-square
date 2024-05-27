@@ -15,7 +15,7 @@ func focus_first_button():
 
 func on_play():
 	play_button.release_focus()
-	SceneLoader.fade_in_scene("res://scenes/game.tscn", 1.0, 1.0)
+	SceneLoader.fade_in_scene("res://scenes/game.tscn", 0.25 ,0.25)
 
 func on_exit():
 	get_tree().quit()

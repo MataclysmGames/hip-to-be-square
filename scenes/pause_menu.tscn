@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b3xqb4wrpa43a" path="res://scenes/title_menu_button.tscn" id="3_6ud4r"]
 
 [node name="PauseMenu" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_sivul")
 
 [node name="SettingsContainer" parent="." instance=ExtResource("2_exlwa")]

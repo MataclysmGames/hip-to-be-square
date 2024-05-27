@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://scripts/background_audio.gd" id="1_2fwhg"]
 
 [node name="BackgroundAudio" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_2fwhg")
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
