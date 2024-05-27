@@ -23,3 +23,10 @@ func _input(event: InputEvent) -> void:
 func change_resolution() -> void:
 	index = (index + 1) % len(window_options)
 	DisplayServer.window_set_mode(window_options[index])
+
+func _process(delta: float) -> void:
+	if Engine.get_process_frames() % 30 == 0:
+		if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN:
+			DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_HIDDEN)
+		else:
+			DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
