@@ -1,0 +1,10 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://lji4cyvbkwl1"]
+
+[ext_resource type="FontFile" uid="uid://csaglupb58glo" path="res://external_assets/Roboto_Mono/static/RobotoMono-Light.ttf" id="1_3hv41"]
+
+[sub_resource type="FontVariation" id="FontVariation_uesml"]
+base_font = ExtResource("1_3hv41")
+
+[resource]
+default_font = SubResource("FontVariation_uesml")
+default_font_size = 12

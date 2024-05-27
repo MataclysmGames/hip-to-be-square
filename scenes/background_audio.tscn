@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwthlxnsujnkt"]
+
+[ext_resource type="Script" path="res://scripts/background_audio.gd" id="1_2fwhg"]
+
+[node name="BackgroundAudio" type="Node2D"]
+script = ExtResource("1_2fwhg")
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="AmbiencePlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="WhispersAmbiencePlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="VoicesAmbiencePlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="FootstepPlayer" type="AudioStreamPlayer" parent="."]

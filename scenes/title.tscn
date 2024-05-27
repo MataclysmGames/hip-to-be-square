@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://84l2kevtvjbw"]
+
+[ext_resource type="Script" path="res://scripts/title.gd" id="1_riart"]
+[ext_resource type="PackedScene" uid="uid://ce2t2vvxagejm" path="res://scenes/title_container.tscn" id="2_t1l8w"]
+[ext_resource type="Script" path="res://scripts/title_container.gd" id="3_ujooa"]
+[ext_resource type="PackedScene" uid="uid://d0qn664v61ibh" path="res://scenes/settings_container.tscn" id="3_xugr4"]
+
+[node name="Title" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_riart")
+
+[node name="TitleContainer" parent="." instance=ExtResource("2_t1l8w")]
+layout_mode = 1
+offset_left = -91.0
+offset_top = -99.0
+offset_right = 91.0
+offset_bottom = 99.0
+script = ExtResource("3_ujooa")
+
+[node name="SettingsContainer" parent="." instance=ExtResource("3_xugr4")]
+visible = false
+layout_mode = 1

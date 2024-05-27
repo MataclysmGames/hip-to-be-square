@@ -1,0 +1,72 @@
+[gd_scene load_steps=4 format=3 uid="uid://ce2t2vvxagejm"]
+
+[ext_resource type="Theme" uid="uid://cl6h3b4xnfojs" path="res://resources/bold_font_theme.tres" id="1_tjpxp"]
+[ext_resource type="Theme" uid="uid://lji4cyvbkwl1" path="res://resources/default_font_theme.tres" id="1_tqf8q"]
+[ext_resource type="PackedScene" uid="uid://b3xqb4wrpa43a" path="res://scenes/title_menu_button.tscn" id="2_wmxxg"]
+
+[node name="TitleContainer" type="VBoxContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.0
+offset_top = -11.5
+offset_right = 52.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="TitleLabel" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("1_tjpxp")
+theme_override_font_sizes/font_size = 24
+text = "Hip to be Square"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("1_tqf8q")
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayButton" parent="." instance=ExtResource("2_wmxxg")]
+custom_minimum_size = Vector2(0, 0)
+layout_mode = 2
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath(".")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath("../SettingsButton")
+focus_next = NodePath("../SettingsButton")
+focus_previous = NodePath(".")
+theme = ExtResource("1_tjpxp")
+text = "Play Game"
+
+[node name="SettingsButton" parent="." instance=ExtResource("2_wmxxg")]
+custom_minimum_size = Vector2(0, 0)
+layout_mode = 2
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath("../PlayButton")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath("../ExitButton")
+focus_next = NodePath("../ExitButton")
+focus_previous = NodePath("../PlayButton")
+theme = ExtResource("1_tjpxp")
+text = "Settings"
+
+[node name="ExitButton" parent="." instance=ExtResource("2_wmxxg")]
+custom_minimum_size = Vector2(0, 0)
+layout_mode = 2
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath("../SettingsButton")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath("../SettingsButton")
+theme = ExtResource("1_tjpxp")
+text = "Exit"

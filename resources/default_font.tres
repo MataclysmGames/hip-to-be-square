@@ -1,0 +1,6 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://0f863jjerkqu"]
+
+[ext_resource type="FontFile" uid="uid://csaglupb58glo" path="res://external_assets/Roboto_Mono/static/RobotoMono-Light.ttf" id="1_8dsyd"]
+
+[resource]
+base_font = ExtResource("1_8dsyd")
