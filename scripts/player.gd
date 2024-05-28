@@ -38,6 +38,7 @@ func jump() -> void:
 	
 	panel.rotation = 0
 	panel.create_tween().tween_property(panel, "rotation_degrees", 180, 1.1)
+	Tts.talk()
 
 func random_color() -> Color:
 	return Color(randf_range(0, 1), randf_range(0, 1), randf_range(0, 1), 1.0)

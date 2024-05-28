@@ -17,6 +17,10 @@ config/features=PackedStringArray("4.3", "Mobile")
 run/max_fps=144
 config/icon="res://icon.svg"
 
+[audio]
+
+general/text_to_speech=true
+
 [autoload]
 
 BackgroundAudio="*res://scenes/background_audio.tscn"
@@ -25,6 +29,7 @@ SaveData="*res://scripts/save_data.gd"
 SceneLoader="*res://scenes/scene_loader.tscn"
 DebugStats="*res://scenes/debug_stats.tscn"
 GameInit="*res://scripts/game_init.gd"
+Tts="*res://scenes/tts.tscn"
 
 [display]
 

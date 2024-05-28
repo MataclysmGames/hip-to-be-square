@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2dl2a1qp4iyl"]
+
+[ext_resource type="Script" path="res://scripts/tts.gd" id="1_02k1w"]
+
+[node name="TTS" type="Node2D"]
+process_thread_group = 2
+process_thread_group_order = 0
+process_thread_messages = 1
+script = ExtResource("1_02k1w")
