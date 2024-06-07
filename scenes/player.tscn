@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://tga8em34vato"]
+[gd_scene load_steps=6 format=3 uid="uid://tga8em34vato"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_qp50w"]
 
@@ -23,16 +23,39 @@ anti_aliasing_size = 0.01
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7drw4"]
 size = Vector2(32, 32)
 
+[sub_resource type="Gradient" id="Gradient_pbh2h"]
+offsets = PackedFloat32Array(0, 0.5)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_5jqsh"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
 [node name="Player" type="CharacterBody2D"]
+skew = 0.0872665
 script = ExtResource("1_qp50w")
 
 [node name="Panel" type="Panel" parent="."]
+z_index = 1
+offset_top = -32.0
 offset_right = 32.0
-offset_bottom = 32.0
 pivot_offset = Vector2(16, 16)
 theme_override_styles/panel = SubResource("StyleBoxFlat_1x2x3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(16, 16)
+position = Vector2(16, -16)
 shape = SubResource("RectangleShape2D_7drw4")
+
+[node name="Particles" type="CPUParticles2D" parent="."]
+position = Vector2(16, -16)
+emitting = false
+amount = 64
+lifetime = 0.3
+one_shot = true
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 250.0
+initial_velocity_max = 500.0
+angle_max = 180.0
+scale_amount_max = 2.0
+color_ramp = SubResource("Gradient_pbh2h")
+color_initial_ramp = SubResource("Gradient_5jqsh")
